@@ -3,7 +3,7 @@ const token = process.env.BOT_TOKEN;
 
 const bot = new TelegramBot(token, { polling: true });
 
-// START (works in private and groups)
+// START - works anywhere
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(
     msg.chat.id,
@@ -44,12 +44,12 @@ function parseAmount(input) {
   return isNaN(amt) || amt <= 0 ? null : amt;
 }
 
-// /p COMMAND (works in group, without admin)
+// /p command
 bot.onText(/\/p(?:@[\w_]+)?\s*(\d+(\.\d+)?)?/, (msg, match) => {
   const amt = parseAmount(match[1]);
 
   if (!amt) {
-    bot.sendMessage(msg.chat.id, "Usage: /p <amount>\nExample: /p 1000");
+    bot.sendMessage(msg.chat.id, "Use like: /p <amount>\nExample: /p 1000");
     return;
   }
 
@@ -62,12 +62,12 @@ bot.onText(/\/p(?:@[\w_]+)?\s*(\d+(\.\d+)?)?/, (msg, match) => {
   );
 });
 
-// /c COMMAND (works in group, without admin)
+// /c command
 bot.onText(/\/c(?:@[\w_]+)?\s*(\d+(\.\d+)?)?/, (msg, match) => {
   const amt = parseAmount(match[1]);
 
   if (!amt) {
-    bot.sendMessage(msg.chat.id, "Usage: /c <amount>\nExample: /c 1000");
+    bot.sendMessage(msg.chat.id, "Use like: /c <amount>\nExample: /c 1000");
     return;
   }
 
