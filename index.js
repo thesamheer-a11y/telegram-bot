@@ -12,7 +12,7 @@ bot.onText(/\/start/, (msg) => {
     "• Rs 2001 To Rs 5K - 3.5%\n" +
     "• Upper Than Rs 5K - 3%\n\n" +
     "RG - @KALKIESCROWSERVICE\n" +
-    "Made By - @tumlu"
+    "Made By - leave owner "
   );
 });
 
