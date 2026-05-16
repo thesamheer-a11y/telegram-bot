@@ -11,8 +11,8 @@ bot.onText(/\/start/, (msg) => {
     "• Rs 401 To Rs 2000 - 3%\n" +
     "• Rs 2001 To Rs 5K - 3.5%\n" +
     "• Upper Than Rs 5K - 3%\n\n" +
-    "RG - @KALKIESCROWSERVICE\n" +
-    "Made By - leave owner "
+    "If you want your own custom bot, contact : @Cixxu\n\n" +
+    "⚡ Powered By @FeesCalcuBot"
   );
 });
 
@@ -49,7 +49,10 @@ bot.onText(/\/p(?:@[\w_]+)?\s*(\d+(\.\d+)?)?/, (msg, match) => {
   const amt = parseAmount(match[1]);
 
   if (!amt) {
-    bot.sendMessage(msg.chat.id, "Use like: /p <amount>\nExample: /p 1000");
+    bot.sendMessage(
+      msg.chat.id,
+      "Use like: /p <amount>\nExample: /p 1000\n\n⚡ Powered By @FeesCalcuBot"
+    );
     return;
   }
 
@@ -58,7 +61,7 @@ bot.onText(/\/p(?:@[\w_]+)?\s*(\d+(\.\d+)?)?/, (msg, match) => {
 
   bot.sendMessage(
     msg.chat.id,
-    `₹${amt} + ₹${fee.toFixed(2)} (${percent}) = ₹${total.toFixed(2)}`
+    `₹${amt} + ₹${fee.toFixed(2)} (${percent}) = ₹${total.toFixed(2)}\n\n⚡ Powered By @FeesCalcuBot`
   );
 });
 
@@ -67,7 +70,10 @@ bot.onText(/\/c(?:@[\w_]+)?\s*(\d+(\.\d+)?)?/, (msg, match) => {
   const amt = parseAmount(match[1]);
 
   if (!amt) {
-    bot.sendMessage(msg.chat.id, "Use like: /c <amount>\nExample: /c 1000");
+    bot.sendMessage(
+      msg.chat.id,
+      "Use like: /c <amount>\nExample: /c 1000\n\n⚡ Powered By @FeesCalcuBot"
+    );
     return;
   }
 
@@ -76,6 +82,6 @@ bot.onText(/\/c(?:@[\w_]+)?\s*(\d+(\.\d+)?)?/, (msg, match) => {
 
   bot.sendMessage(
     msg.chat.id,
-    `₹${amt} - ₹${fee.toFixed(2)} (${percent}) = ₹${final.toFixed(2)}`
+    `₹${amt} - ₹${fee.toFixed(2)} (${percent}) = ₹${final.toFixed(2)}\n\n⚡ Powered By @FeesCalcuBot`
   );
 });
